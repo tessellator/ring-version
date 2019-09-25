@@ -14,7 +14,7 @@
       "dev")))
 
 (defn wrap-version-response
-  "A middleware that adds the ImplemenationVersion from the jar manifest to an
+  "A middleware that adds the ImplementationVersion from the jar manifest to an
   X-Version header. Returns 'dev' if no appropriate version is found (such as
   when running at the REPL)."
   [handler]
