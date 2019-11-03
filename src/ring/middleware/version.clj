@@ -1,7 +1,7 @@
 (ns ring.middleware.version
   (:require [ring.util.response :as response]))
 
-(defn wrap-version-header [handler version]
+(defn wrap-version [handler version]
   (fn [request]
     (-> (handler request)
         (response/header "X-Version" version))))
