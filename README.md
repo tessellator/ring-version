@@ -1,10 +1,27 @@
 # ring-version
 
-ring-version provides a ring middleware `wrap-version-response` to add an 
-`X-Version` header to every response. The version used is determined by the
-Implementation-Version set in the manifest. If no value is found (such as when
-you are running at a REPL), a value of `dev` is used.
+A ring middleware that populates `X-Version` header on a response.
 
+## Usage
+
+```clojure
+(require '[ring.middleware.version :refer [wrap-version]])
+
+(def handler
+  (-> my-routes
+      (wrap-version "1.0")))
+```
+
+This function also provides a function `implementation-version` that extracts
+the ImplementationVersion from a jar file given a type and a default value.
+
+```clojure
+(require '[ring.middleware.version :refer [implementation-version wrap-version]])
+
+(def handler
+  (-> my-routes
+      (wrap-version (implementation-version my.Type "dev"))))
+```
 
 ### License
 
