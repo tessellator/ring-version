@@ -1,4 +1,4 @@
-# ring-version
+# ring-version [![Clojars Project](https://img.shields.io/clojars/v/tessellator/ring-version.svg)](https://clojars.org/tessellator/ring-version)
 
 A ring middleware that populates `X-Version` header on a response.
 
